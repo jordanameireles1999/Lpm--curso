@@ -6,7 +6,7 @@ public class CursoVirtual extends Curso{
     }
 
     @Override
-    protected void valorInicialCurso() {
+   public void valorInicialCurso() {
         valorCurso = (valorBase*0.4) + valorBase;
     }
 

@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Matricula {
     public Aluno aluno;
     public Curso curso;
@@ -9,9 +11,13 @@ public class Matricula {
         this.aluno = aluno;
         this.curso = curso;
         aluno.listaCursos.add(curso);
+
     }
 
     public void setAulasAssistidas(int aulasAssistidas) {
         this.aulasAssistidas = aulasAssistidas;
+    }
+    public void setAtividadesFeitas(boolean atividadesFeitas) {
+        this.atividadesFeitas = atividadesFeitas;
     }
 }

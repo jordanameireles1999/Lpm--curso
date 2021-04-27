@@ -6,7 +6,7 @@ public class CursoGuiado extends Curso{
     }
 
     @Override
-    protected void valorInicialCurso() {
+    public void valorInicialCurso() {
         CursoVirtual base = new CursoVirtual(valorBase);
         valorCurso =(base.valorCurso * ACRESCIMO) + base.valorCurso;
     }

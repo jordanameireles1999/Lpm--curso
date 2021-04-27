@@ -1,6 +1,9 @@
 public abstract class Curso {
      protected String nome;
-     protected double valorCurso;
+
+
+
+    protected double valorCurso;
      protected double valorBase;
      protected int totalAulas;
 
@@ -9,11 +12,15 @@ public abstract class Curso {
         this.nome = nome;
         this.valorBase = valorBase;
     }
+
+    public double getValorCurso() {
+        return valorCurso;
+    }
     public int getTotalAulas() {
         return totalAulas;
     }
     protected  void setTotalAulas(int numAulas){
          this.totalAulas = numAulas;
      }
-    protected abstract void valorInicialCurso();
+    public abstract void valorInicialCurso();
 }

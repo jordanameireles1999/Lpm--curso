@@ -5,7 +5,7 @@ public  class CursoLeitura extends Curso{
     }
 
     @Override
-    protected void valorInicialCurso() {
+    public void valorInicialCurso() {
         valorCurso = valorBase;
     }
 }
