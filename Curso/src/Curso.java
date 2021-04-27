@@ -1,8 +1,6 @@
 public abstract class Curso {
      protected String nome;
 
-
-
     protected double valorCurso;
      protected double valorBase;
      protected int totalAulas;

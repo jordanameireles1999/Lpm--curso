@@ -42,23 +42,8 @@ public class Aluno {
             }
         }
     }
-    private double valorPorCurso(){
-        int tam = listaCursos.size();
-        double valorCurso =0;
+  
 
-        if(tam<3){
-            for(int i=0;i<tam;i++){
-                valorCurso=listaCursos.get(i).valorCurso;
-            }
-        }else{
-            for (int i = 1; i <= tam; i++) {
-                valorCurso = listaCursos.get(i).valorCurso;
-                valorCurso = (valorCurso * DESCONTO) + valorCurso;
-                if (i % 6 == 0) {
-                    valorCurso = 0.0;
-                }
-            }
-        }
-        return valorCurso;
-    }
+
+
 }
