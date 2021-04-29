@@ -9,8 +9,6 @@ public class Aluno {
     private double valorBruto;
     private double valorFinal;
 
-
-
     public Aluno(String nome) {
         this.nome = nome;
         listaCursos = new ArrayList<>();
@@ -42,7 +40,7 @@ public class Aluno {
             }
         }
     }
-    private double [] valorPorCurso(Curso curso){
+    private void valorPorCurso(Curso curso){
         int tam = listaCursos.size();
 
         double [] valorCurso = new double[tam];
@@ -50,18 +48,15 @@ public class Aluno {
         if(tam<3){
             for(int i=0;i<tam;i++){
                 valorCurso[i]=listaCursos.get(i).valorCurso;
+                System.out.println(listaCursos.get(i).getNome() + valorCurso[i]);
             }
         }else{
-            for (int i = 1; i <= tam; i++) {
-                valorCurso[i] = (listaCursos.get(i).valorCurso * DESCONTO) + listaCursos.get(i).valorCurso;
+            for (int i = 0; i < tam; i++) {
                 if (i % 6 == 0) {
                     valorCurso[i] = 0.0;
-                }
+                }else valorCurso[i] = (listaCursos.get(i).valorCurso * DESCONTO) + listaCursos.get(i).valorCurso;
+                System.out.println(listaCursos.get(i).getNome() + valorCurso[i]);
             }
         }
-        return valorCurso;
     }
-
-
-
 }

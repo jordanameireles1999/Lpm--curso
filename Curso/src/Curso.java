@@ -1,5 +1,7 @@
 public abstract class Curso {
-     protected String nome;
+
+
+    protected String nome;
 
     protected double valorCurso;
      protected double valorBase;
@@ -9,6 +11,9 @@ public abstract class Curso {
     public Curso(String nome, double valorBase){
         this.nome = nome;
         this.valorBase = valorBase;
+    }
+    public String getNome() {
+        return nome;
     }
 
     public double getValorCurso() {
