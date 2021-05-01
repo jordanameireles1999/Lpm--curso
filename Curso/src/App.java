@@ -64,6 +64,15 @@ public class App {
 		empresa.matricular(aluno2, curso18);
 		empresa.matricular(aluno2, curso12);
 		empresa.matricular(aluno2, curso3);
+		empresa.matricular(aluno3, curso2);
+		empresa.matricular(aluno3, curso5);
+		empresa.matricular(aluno3, curso7);
+		empresa.matricular(aluno4, curso3);
+		empresa.matricular(aluno4, curso6);
+		empresa.matricular(aluno4, curso8);
+		empresa.matricular(aluno5, curso4);
+		empresa.matricular(aluno5, curso9);
+		empresa.matricular(aluno5, curso15);
 
 		imprimeExtrato(empresa);
 		imprimeTotalAReceber(empresa);
@@ -71,7 +80,7 @@ public class App {
 	}
 
 	private static void imprimeTotalAReceber(Empresa empresa) {
-		System.out.println("Total Geral\t\t\t" + empresa.totalAReceber());
+		System.out.println("Empresa deve receber:\t\t" + empresa.totalAReceber());
 	}
 
 	private static void imprimeExtrato(Empresa empresa) {
