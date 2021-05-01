@@ -1,14 +1,20 @@
-public class CursoVirtual extends Curso{
-    private static final double ACRESCIMO = 0.4;
 
-    public CursoVirtual(double valorBase){
-        super("Curso Virtual", valorBase);
-    }
+public class CursoVirtual extends Curso {
+	
+    public CursoVirtual(String nomeBase, double valorBase, int totalAulas, int atividadesAvaliativas) {
+		super(nomeBase, valorBase, totalAulas, atividadesAvaliativas);
+	}
+
+	private static final double ACRESCIMO = 0.4;
+
 
     @Override
-   public void valorInicialCurso() {
-        valorCurso = (valorBase*0.4) + valorBase;
+   public double calculaValorCurso() {
+        return (valorBase*ACRESCIMO) + valorBase;
     }
 
-
+	@Override
+	public String compoeNome() {
+		return "Curso Virtual de " + nomeBase;
+	}
 }

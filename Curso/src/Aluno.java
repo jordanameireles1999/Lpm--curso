@@ -2,61 +2,62 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Aluno {
+	private String nome;
+	protected List<Curso> listaCursos;
+	
+	
+	public List<Curso> getListaCursos() {
+		return listaCursos;
+	}
 
-    private String nome;
-    public List<Curso> listaCursos;
-    private static final double DESCONTO = 0.15;
-    private double valorBruto;
-    private double valorFinal;
 
-    public Aluno(String nome) {
-        this.nome = nome;
-        listaCursos = new ArrayList<>();
+	private static final double DESCONTO = 0.15;
 
-    }
-    public double getValorFinal() {
-        return valorFinal;
-    }
+	public Aluno(String nome) {
+		this.setNome(nome);
+		listaCursos = new ArrayList<>();
 
-    public void valorTotalBruto(){
-        for(Curso curso : listaCursos ){
-            valorBruto= valorBruto+ curso.getValorCurso();
-        }
-    }
-    public void valorTotalDescTresCursos(){
-        if(listaCursos.size()>=3) {
-            valorFinal = (valorBruto * DESCONTO)+ valorBruto;
-        }
-    }
+	}
 
-    public void valorDescACadaSeis(){
-        int tam = listaCursos.size();
-        if(tam>5){
-            for(int i =1 ;i<=tam; i++){
-                if(i%6==0) {
-                    double valorCurso = listaCursos.get(i).valorCurso;
-                    valorFinal = valorFinal - valorCurso;
-                }
-            }
-        }
-    }
-    private void valorPorCurso(Curso curso){
-        int tam = listaCursos.size();
+	public String getNome() {
+		return nome;
+	}
 
-        double [] valorCurso = new double[tam];
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-        if(tam<3){
-            for(int i=0;i<tam;i++){
-                valorCurso[i]=listaCursos.get(i).valorCurso;
-                System.out.println(listaCursos.get(i).getNome() + valorCurso[i]);
-            }
-        }else{
-            for (int i = 0; i < tam; i++) {
-                if (i % 6 == 0) {
-                    valorCurso[i] = 0.0;
-                }else valorCurso[i] = (listaCursos.get(i).valorCurso * DESCONTO) + listaCursos.get(i).valorCurso;
-                System.out.println(listaCursos.get(i).getNome() + valorCurso[i]);
-            }
-        }
-    }
+	public double calculaValorFinal() {
+		double valorFinal = 0;
+		for (double valor : valorPorCurso()) {
+			valorFinal += valor;
+		}
+
+		return valorFinal;
+	}
+
+	public double[] valorPorCurso() {
+		int tam = listaCursos.size();
+
+		double[] valorCurso = new double[tam];
+
+		if (tam < 3) {
+			for (int i = 0; i < tam; i++) {
+				valorCurso[i] = listaCursos.get(i).calculaValorCurso();
+				// System.out.println(listaCursos.get(i).getNome() + valorCurso[i]);
+			}
+		} else {
+			for (int i = 0; i < tam; i++) {
+				if ((i+1) % 6 == 0) {
+					valorCurso[i] = 0.0;
+				} else {
+					valorCurso[i] = listaCursos.get(i).calculaValorCurso()
+							- (listaCursos.get(i).calculaValorCurso() * DESCONTO);
+				}
+				// System.out.println(listaCursos.get(i).getNome() + valorCurso[i]);
+			}
+		}
+		return valorCurso;
+	}
+
 }

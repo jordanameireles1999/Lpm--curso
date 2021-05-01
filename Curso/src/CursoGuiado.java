@@ -1,13 +1,21 @@
-public class CursoGuiado extends Curso{
-    private static final double ACRESCIMO = 0.2;
 
-    public CursoGuiado(double valorBase){
-        super("Curso Guiado", valorBase);
-    }
+public class CursoGuiado extends CursoVirtual {
+	
+	public CursoGuiado(String nomeBase, double valorBase, int totalAulas, int atividadesAvaliativas) {
+		super(nomeBase, valorBase, totalAulas, atividadesAvaliativas);
+	}
 
-    @Override
-    public void valorInicialCurso() {
-        CursoVirtual base = new CursoVirtual(valorBase);
-        valorCurso =(base.valorCurso * ACRESCIMO) + base.valorCurso;
-    }
+	private static final double ACRESCIMO = 0.2;
+
+
+
+	@Override
+	public double calculaValorCurso() {
+		return (super.calculaValorCurso() * ACRESCIMO) + super.calculaValorCurso();
+	}
+	
+	@Override
+	public String compoeNome() {
+		return "Curso Guiado de " + nomeBase;
+	}
 }

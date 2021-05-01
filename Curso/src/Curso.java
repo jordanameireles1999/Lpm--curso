@@ -1,29 +1,39 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Curso {
+	public List<Aluno> listaAlunos = new ArrayList<Aluno>();
+	protected String nomeBase;
+	protected double valorBase;
+	protected int totalAulas;
+	protected int atividadesAvaliativas;
 
 
-    protected String nome;
+	public Curso(String nomeBase, double valorBase, int totalAulas, int atividadesAvaliativas) {
+		this.nomeBase = nomeBase;
+		this.valorBase = valorBase;
+		this.totalAulas = totalAulas;
+		this.atividadesAvaliativas = atividadesAvaliativas;
 
-    protected double valorCurso;
-     protected double valorBase;
-     protected int totalAulas;
+	}
 
+	public abstract String compoeNome();
 
-    public Curso(String nome, double valorBase){
-        this.nome = nome;
-        this.valorBase = valorBase;
-    }
-    public String getNome() {
-        return nome;
-    }
+	public abstract double calculaValorCurso();
 
-    public double getValorCurso() {
-        return valorCurso;
-    }
-    public int getTotalAulas() {
-        return totalAulas;
-    }
-    protected  void setTotalAulas(int numAulas){
-         this.totalAulas = numAulas;
-     }
-    public abstract void valorInicialCurso();
+	public int getTotalAulas() {
+		return totalAulas;
+	}
+
+	protected void setTotalAulas(int numAulas) {
+		this.totalAulas = numAulas;
+	}
+	
+	public int getAtividadesAvaliativas() {
+		return atividadesAvaliativas;
+	}
+
+	public void setAtividadesAvaliativas(int atividadesAvaliativas) {
+		this.atividadesAvaliativas = atividadesAvaliativas;
+	}
 }
