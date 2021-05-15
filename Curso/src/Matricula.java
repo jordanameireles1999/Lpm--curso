@@ -9,7 +9,7 @@ public class Matricula implements ICertificavel {
     public Matricula(Aluno aluno, Curso curso){
         this.aluno = aluno;
         this.curso = curso;
-        aluno.listaCursos.add(curso);
+        this.aluno.listaCursos.add(curso);
         curso.listaAlunos.add(aluno);
 
     }

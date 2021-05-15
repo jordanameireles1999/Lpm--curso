@@ -3,13 +3,14 @@ import java.util.List;
 
 public abstract class Curso {
 	public List<Aluno> listaAlunos = new ArrayList<Aluno>();
+	public int id;
 	protected String nomeBase;
 	protected double valorBase;
 	protected int totalAulas;
 	protected int atividadesAvaliativas;
 
-
-	public Curso(String nomeBase, double valorBase, int totalAulas, int atividadesAvaliativas) {
+	public Curso(int id, String nomeBase, double valorBase, int totalAulas, int atividadesAvaliativas) {
+		this.id = id;
 		this.nomeBase = nomeBase;
 		this.valorBase = valorBase;
 		this.totalAulas = totalAulas;
@@ -36,4 +37,6 @@ public abstract class Curso {
 	public void setAtividadesAvaliativas(int atividadesAvaliativas) {
 		this.atividadesAvaliativas = atividadesAvaliativas;
 	}
+
+	public int getId() { return id; }
 }

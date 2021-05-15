@@ -32,7 +32,6 @@ public class Empresa {
 	}
 
 	public double totalAReceber() {
-
 		double valorTotal = 0;
 
 		for (Aluno aluno : listaAlunos) {
@@ -41,4 +40,23 @@ public class Empresa {
 		return valorTotal;
 	}
 
+	public Curso getCursoById(int id){
+		Curso cursoEncontrado = null;
+		for (Curso curso : listaCursos) {
+			if(id == curso.getId()){
+				cursoEncontrado = curso;
+			}
+		}
+		return cursoEncontrado;
+	}
+
+	public Aluno getAlunoById(int id){
+		Aluno alunoEncontrado = null;
+		for (Aluno aluno : listaAlunos) {
+			if(id == aluno.getId()){
+				alunoEncontrado = aluno;
+			}
+		}
+		return alunoEncontrado;
+	}
 }

@@ -2,8 +2,8 @@
 public class CursoLeitura extends Curso {
 
     
-    public CursoLeitura(String nomeBase, double valorBase, int totalAulas, int atividadesAvaliativas) {
-		super(nomeBase, valorBase, totalAulas, atividadesAvaliativas);
+    public CursoLeitura(int id, String nomeBase, double valorBase, int totalAulas, int atividadesAvaliativas) {
+		super(id, nomeBase, valorBase, totalAulas, atividadesAvaliativas);
 	}
 
 	@Override
